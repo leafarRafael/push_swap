@@ -6,33 +6,59 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:35:50 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/21 18:03:53 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:39:47 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void ft_add_1st_node(t_cdlst *list, t_node *new_node);
+static void ft_add_2st_node(t_cdlst *list, t_node *new_node);
+static void	ft_add_onwards(t_cdlst *list, t_node *new_node);
+
 void	ft_include_node(t_cdlst *list, t_node  *new_node)
 {
-	t_node	*node;
-
-	node = list->head;
 	if (!new_node || !list)
 		ft_error("error\n", list);
-	if (!node)
-	{
-		new_node->next = new_node;
-    	new_node->prev = new_node;
-		list->head = new_node;
-		list->last = new_node;
-	}
-	else
-	{
-		list->head = new_node;
-		new_node->next = node;
-		new_node->prev = node->prev;
-		node->prev->next = new_node;
-		node->prev = new_node;	
-	}
+	if (list->size == 0)
+		ft_add_1st_node(list, new_node);
+	else if (list->size == 1)
+		ft_add_2st_node(list, new_node);
+	else if (list->size > 1)
+		ft_add_onwards(list, new_node);
 	list->size++;
+}
+
+static void ft_add_1st_node(t_cdlst *list, t_node *new_node)
+{
+	new_node->next = new_node;
+	new_node->prev = new_node;
+	list->head = new_node;
+	list->last = new_node;
+}
+
+static void ft_add_2st_node(t_cdlst *list, t_node *new_node)
+{
+	t_node	*temp;
+
+	temp = list->head;
+	temp->next = new_node;
+	temp->prev = new_node;
+	new_node->next = temp;
+	new_node->prev = temp;
+	list->head = new_node;
+	list->last = temp;
+}
+
+static void	ft_add_onwards(t_cdlst *list, t_node *new_node)
+{
+	t_node	*temp;
+
+	temp = list->head;
+	new_node->next = temp;
+	new_node->prev = list->last;
+	temp->next->prev = new_node;
+	temp->prev = new_node;
+	list->last->next = new_node;
+	list->head = new_node;
 }

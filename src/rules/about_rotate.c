@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 09:14:23 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/21 11:56:42 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/22 09:57:24 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_rotate(t_cdlst *list, char *msg)
 {
-	t_node	*first;
+	t_node	*temp;
 
 	if (!list || !list->head)
 		return ;
-	first = list->head;
-	list->head = list->head->next;
-	list->last = first;
+	temp = list->head;
+	list->last = temp;
+	list->head = temp->next;
 	if (msg)
 		ft_printf("%s\n", msg);
 }

@@ -6,26 +6,27 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:10:49 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/21 11:57:02 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/22 12:13:01 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void ft_swap_complex(t_cdlst  *list);
+static void ft_simple_swap(t_cdlst  *list);
+
 void    ft_swap(t_cdlst *list, char *msg)
 {
-    t_node  *temp_node;
+    t_node  *first;
     
-    if (!list->head || (list->head->next == list->head))
+    if (!list)
         return ;
-    temp_node = list->head;
-    list->head->next->prev = list->last;
-    list->last->next = list->head->next;
-    list->head = list->head->next;  
-    temp_node->next = list->head->next;
-    temp_node->prev = list->head;
-    list->head->next->next->prev = temp_node;
-    list->head->next = temp_node;
+    if (list->size <= 1)
+        return ;
+    if (list->size == 2)
+        ft_simple_swap(list);
+    else
+        ft_swap_complex(list);
     if (msg)
         ft_printf("%s\n", msg);
 }
@@ -39,4 +40,33 @@ void    ft_swap_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg)
     ft_swap(list_a, NULL);
     ft_swap(list_b, NULL);
     ft_printf("%s\n", msg);
+}
+
+static void ft_swap_complex(t_cdlst  *list)
+{
+    t_node  *first;
+    t_node  *second;
+    t_node  *third;
+    t_node  *last;
+
+    first = list->head;
+    second = list->head->next;
+    third = list->head->next->next;
+    last = list->last;
+    first->next = third;
+    third->prev = first;
+    first->prev = second;
+    second->next = first;
+    second->prev = last;
+    last->next = second;
+    list->head = second;
+}
+
+static void ft_simple_swap(t_cdlst  *list)
+{
+    t_node  *first;
+
+    first = list->head;
+    list->head = list->last;
+    list->last = first;
 }

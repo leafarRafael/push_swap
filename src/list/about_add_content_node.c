@@ -6,15 +6,14 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:28:08 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/21 14:43:09 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:35:01 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static void	ft_add_1st_node(t_cdlst *list, t_node *new_node);
-static void	ft_add_2st_node(t_cdlst *list, t_node *new_node);
-static void	ft_add_3rd_onwards_node(t_cdlst *list, t_node *new_node);
+static void	ft_add_second_onwards(t_cdlst *list, t_node *new_node);
 
 void	ft_creating_node(t_cdlst *list, long content)
 {
@@ -26,35 +25,28 @@ void	ft_creating_node(t_cdlst *list, long content)
 	new_node->content = content;
 	if (list->size == 0)
 		ft_add_1st_node(list, new_node);
-	else if(list->size == 1)
-		ft_add_2st_node(list, new_node);
 	else
-		ft_add_3rd_onwards_node(list, new_node);
+		ft_add_second_onwards(list, new_node);
+	list->size++;
 }
 
 static void	ft_add_1st_node(t_cdlst *list, t_node *new_node)
 {
+	new_node->next = new_node;
+	new_node->prev = new_node;
 	list->head = new_node;
 	list->last = new_node;
-	list->size++;
 }
 
-static void	ft_add_2st_node(t_cdlst *list, t_node *new_node)
+static void	ft_add_second_onwards(t_cdlst *list, t_node *new_node)
 {
-	list->head->next = new_node;
-	list->head->prev = new_node;
-	list->last = new_node;
-	new_node->next = list->head;
-	new_node->prev = list->head;
-	list->size++;
-}
+	t_node *temp;
 
-static void	ft_add_3rd_onwards_node(t_cdlst *list, t_node *new_node)
-{
-	list->head->prev = new_node;
+	temp = list->last;
+
 	new_node->next = list->head;
-	new_node->prev = list->last;
-	list->last->next = new_node;
+	new_node->prev = temp;
+	list->head->prev = new_node;
+	temp->next = new_node;
 	list->last = new_node;
-	list->size++;
 }
