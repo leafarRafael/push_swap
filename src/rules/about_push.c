@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:36:16 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/22 11:19:33 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/23 09:35:06 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void    ft_push(t_cdlst *to_stack, t_cdlst *from_stack, char *msg)
 	second = from_stack->head->next;
 	second->prev = from_stack->last;
 	from_stack->last->next = second;
-	from_stack->head = second;	
+	from_stack->head = second;
 	from_stack->size--;
 	ft_include_node(to_stack, remove_add);
 	ft_printf("%s\n", msg);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_add_node_front.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:35:50 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/22 11:39:47 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/23 09:39:15 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static void	ft_add_onwards(t_cdlst *list, t_node *new_node)
 	temp = list->head;
 	new_node->next = temp;
 	new_node->prev = list->last;
-	temp->next->prev = new_node;
 	temp->prev = new_node;
 	list->last->next = new_node;
 	list->head = new_node;

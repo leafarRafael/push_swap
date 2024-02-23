@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_add_content_node.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:28:08 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/22 11:35:01 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/23 09:30:30 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static void	ft_add_second_onwards(t_cdlst *list, t_node *new_node)
 	t_node *temp;
 
 	temp = list->last;
-
 	new_node->next = list->head;
 	new_node->prev = temp;
 	list->head->prev = new_node;

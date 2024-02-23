@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/21 15:33:22 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/23 15:50:48 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,23 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
+# define PA "pa"
+# define PB "pb"
+# define SA "sa"
+# define SB	"sb"
+# define SS "ss"
+# define RA "ra"
+# define RB "rb"
+# define RR "rr"
+# define RRA "rra"
+# define RRB "rrb"
+# define RRR "rrr"
+
 typedef struct s_node
 {
-	long            content;    
+	long            content;
 	struct s_node   *prev;
-	struct s_node   *next;  
+	struct s_node   *next; 
 }           t_node;
 
 typedef struct s_cdlst
