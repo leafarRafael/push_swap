@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:52:32 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/24 10:28:47 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/25 14:41:05 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	ft_error_cpy_m_l(char *msg, t_cdlst *stack_a, t_cdlst *stack_b, t_var *var)
 		ft_free_list(stack_a);
 	if (stack_b)
 		ft_free_list(stack_b);
-	if (var->matrix)
-		ft_free_matrix(var->matrix);
 	if (var)
 		free(var);
 	exit(EXIT_FAILURE);

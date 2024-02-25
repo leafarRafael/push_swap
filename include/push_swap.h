@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/24 13:51:11 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/25 15:07:02 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ typedef struct s_var
 	long	smaller;
 	t_cdlst	*s_a;
 	t_cdlst	*s_b;
-	char	**matrix;
 }			t_var;
 
 /*
@@ -83,17 +82,17 @@ void	ft_free_matrix(char **matrix);
 void	ft_free_list(t_cdlst *list);
 char	**ft_cpy_matrix(char *argv[], int argc);
 t_rules	*ft_init_get_rules(void);
-void    ft_cpy_matrix_to_list(t_var *var);
+void    ft_cpy_matrix_to_list(t_var *var, char  *matrix[]);
 int		ft_check_repeated_numbers(t_cdlst *s_a);
 void	ft_search_highest_lowest(t_var *var, t_cdlst *list);
 void	ft_assigned_index_node(t_var *var);
-
 /*
 	functions about algorithms
 */
-void	ft_bubble_sort(t_var *var, t_cdlst *s_a, t_cdlst *s_b);
 int		ft_already_sorted(t_cdlst *s_a);
-void	ft_short_list(t_var *var);
+void	ft_short_list(t_cdlst *list);
+void	ft_sort(t_var *var);
+void	ft_init_stack_b(t_var *var);
 
 /*
 	functions about rules push_swap

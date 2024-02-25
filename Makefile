@@ -5,6 +5,7 @@ LIBFT			:= ./lib/lib_get_print/libft.a
 PATH_MAKE_LIB	:= ./lib/lib_get_print
 
 FILES			:=./src/algorithms/about_sorting_algorithms.c\
+				./src/algorithms/about_sorting_small.c\
 				./src/list/about_add_content_node.c\
 				./src/list/about_add_node_front.c\
 				./src/list/about_indexing_the_list.c\
@@ -15,7 +16,6 @@ FILES			:=./src/algorithms/about_sorting_algorithms.c\
 				./src/rules/about_swap.c\
 				./src/utils/about_already_sorted.c\
 				./src/utils/about_cpy_matrix_to_list.c\
-				./src/utils/about_cpy_matrix.c\
 				./src/utils/about_error.c\
 				./src/utils/about_free_memory.c\
 				./src/utils/about_highest_lowest_value.c\
@@ -32,7 +32,9 @@ CMD_FCLEAN		:= rm -rf
 
 all: $(NAME)
 
-$(NAME): $(LIBFT)
+$(NAME): $(LIBFT) $(FILES)
+
+$(NAME):
 	@$(CC) $(FILES) $(LIBFT) $(INCLUDE) -o $(NAME)
 
 $(LIBFT): libft
