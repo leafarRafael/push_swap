@@ -1,23 +1,28 @@
 NAME			:= push_swap
-CFLAGS			:= #-Wextra -Wall -Werror -g3
+CFLAGS			:= -Wextra -Wall -Werror -g3
 CC				:= cc
 LIBFT			:= ./lib/lib_get_print/libft.a
 PATH_MAKE_LIB	:= ./lib/lib_get_print
 
-FILES			:= ./src/main.c\
-				./src/utils/about_error.c\
-				./src/utils/about_free_memory.c\
-				./src/utils/about_cpy_matrix.c\
-				./src/utils/about_cpy_matrix_to_list.c\
-				./src/utils/about_struct_rules.c\
-				./src/utils/about_valid_args.c\
-				./src/list/about_initializing_list.c\
+FILES			:=./src/algorithms/about_sorting_algorithms.c\
 				./src/list/about_add_content_node.c\
 				./src/list/about_add_node_front.c\
+				./src/list/about_indexing_the_list.c\
+				./src/list/about_initializing_list.c\
 				./src/rules/about_push.c\
-				./src/rules/about_swap.c\
-				./src/rules/about_rotate.c\
 				./src/rules/about_reverse_rotate.c\
+				./src/rules/about_rotate.c\
+				./src/rules/about_swap.c\
+				./src/utils/about_already_sorted.c\
+				./src/utils/about_cpy_matrix_to_list.c\
+				./src/utils/about_cpy_matrix.c\
+				./src/utils/about_error.c\
+				./src/utils/about_free_memory.c\
+				./src/utils/about_highest_lowest_value.c\
+				./src/utils/about_repeated_numbers.c\
+				./src/utils/about_struct_rules.c\
+				./src/utils/about_valid_args.c\
+				./src/main.c\
 				FUNCOES_TEMPORARIAS_DEBUG.c
 
 

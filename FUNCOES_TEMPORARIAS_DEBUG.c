@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FUNCOES_TEMPORARIAS_DEBUG.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:43:20 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/22 11:12:02 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/24 13:15:20 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,30 @@ void	ft_print_list(t_cdlst *list)
 	while (temp != list->head)
 	{
 		printf("[%ld]\n", temp->content);
+		temp = temp->next;
+	}
+}
+
+
+void	ft_print_list_index(t_cdlst *list)
+{
+	t_node *temp;
+
+	if (!list)
+		return ;
+	if (!list || list->size == 0)
+		return ;
+	if (list->size == 1)
+	{
+		printf("[%d]\n", list->head->index);
+		return ;
+	}
+	temp = list->head;
+	printf("[%d]\n", temp->index);
+	temp = list->head->next;
+	while (temp != list->head)
+	{
+		printf("[%d]\n", temp->index);
 		temp = temp->next;
 	}
 }

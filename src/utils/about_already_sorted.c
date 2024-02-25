@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   about_error.c                                      :+:      :+:    :+:   */
+/*   about_already_sorted.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:52:32 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/24 10:28:47 by rbutzke          ###   ########.fr       */
+/*   Created: 2024/02/24 10:12:37 by rbutzke           #+#    #+#             */
+/*   Updated: 2024/02/24 10:27:01 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(char *msg, t_cdlst *list)
+int	ft_already_sorted(t_cdlst *s_a)
 {
-	ft_printf("%s\n", msg);
-	if (list)
-		ft_free_list(list);
-	exit(EXIT_FAILURE);
-}
+	t_node	*current;
+	t_node	*next;
+	int		i;
 
-void	ft_error_cpy_m_l(char *msg, t_cdlst *stack_a, t_cdlst *stack_b, t_var *var)
-{
-	if (msg)
-		ft_printf("%s\n", msg);
-	if (stack_a)
-		ft_free_list(stack_a);
-	if (stack_b)
-		ft_free_list(stack_b);
-	if (var->matrix)
-		ft_free_matrix(var->matrix);
-	if (var)
-		free(var);
-	exit(EXIT_FAILURE);
+	if (!s_a)
+		return (-1);
+	i = 0;
+	current = s_a->head;
+	next = s_a->head->next;
+	while (i != s_a->size)
+	{
+		if (current->content > next->content)
+			return (-1);
+		current = next;
+		next = next->next;
+		if (next == s_a->head)
+			return (0);
+		i++;
+	}
+	return (0);
 }

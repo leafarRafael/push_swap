@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_reverse_rotate.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 11:41:51 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/22 09:55:43 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/24 08:57:02 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_reverse_rotate(t_cdlst *list, char *msg)
 		return ;
 	temp = list->last;
 	list->head = temp;
-	list->last = temp->prev;	
+	list->last = temp->prev;
 	if (msg)
 		ft_printf("%s\n", msg);
 }

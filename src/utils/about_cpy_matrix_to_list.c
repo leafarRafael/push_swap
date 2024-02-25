@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_cpy_matrix_to_list.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:56:12 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/21 15:39:25 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/24 13:50:52 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int ft_valid(char c)
     return ((c >= '0' && c <= '9') || c == '+' || c == '-');
 }
 
-void    ft_cpy_matrix_to_list(t_cdlst *stack_a, t_cdlst *stack_b, t_var *var)
+void    ft_cpy_matrix_to_list(t_var *var)
 {
     int     i;
     long    content;
@@ -33,7 +33,7 @@ void    ft_cpy_matrix_to_list(t_cdlst *stack_a, t_cdlst *stack_b, t_var *var)
             var->bigger = content;
         if (content < var->smaller)
             var->smaller = content;
-        ft_creating_node(stack_a, content);
+        ft_creating_node(var->s_a, content);
         i++;
     }
     ft_free_matrix(var->matrix);

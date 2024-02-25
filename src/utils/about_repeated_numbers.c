@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   about_valid_args.c                                 :+:      :+:    :+:   */
+/*   about_repeated_numbers.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 15:32:39 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/24 17:34:31 by rbutzke          ###   ########.fr       */
+/*   Created: 2024/02/24 09:00:12 by rbutzke           #+#    #+#             */
+/*   Updated: 2024/02/24 09:41:21 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int ft_valid(char c)
+int	ft_check_repeated_numbers(t_cdlst *s_a)
 {
-    return ((c >= '0' && c <= '9') || c == '+' || c == '-');
-}
+	t_node	*current;
+	t_node	*c_temp;
+	int		i;
 
-void	ft_valid_arg(int argc, char *argv[])
-{
-	int	i;
-	int	x;
-
-	i = 1;
-	if (argc == 1 || argc == 2)
+	if (!s_a)
+		return (-1);
+	if (s_a->head->content == s_a->head->next->content)
+		return (-1);
+	i = 0;
+	current = s_a->head;
+	c_temp = s_a->head->next;
+	while (i != s_a->size)
 	{
-		exit(1);
-	}
-	while (argv[i])
-	{
-		x = 0;
-		while (argv[i][x])
+		while (c_temp != s_a->head)
 		{
-			if (!ft_valid(argv[i][x]))
-				ft_error("error", NULL);
-			x++;
+			if (current->content == c_temp->content)
+				return (-1);
+			c_temp = c_temp->next;
 		}
+		current = current->next;
+		c_temp = current->next;
 		i++;
 	}
+	return (0);
 }
