@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_sorting_algorithms.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:02:00 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/25 15:06:34 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/26 16:26:04 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_sort(t_var *var)
 
 	ft_init_stack_b(var);
 	ft_short_list(var->s_a);
+
+
 	//ft_print_list(var->s_a);
 	ft_print_list_index(var->s_a);
 }
@@ -31,7 +33,7 @@ void	ft_init_stack_b(t_var *var)
 	int		half_size;
 
 	rules = ft_init_get_rules();
-	half_size = var->s_a->size / 3;
+	half_size = var->s_a->size / 4;
 	while (var->s_a->size != 3)
 		ft_init_stack_b_healper(var, &half_size, rules);
 }

@@ -4,7 +4,8 @@ CC				:= cc
 LIBFT			:= ./lib/lib_get_print/libft.a
 PATH_MAKE_LIB	:= ./lib/lib_get_print
 
-FILES			:=./src/algorithms/about_sorting_algorithms.c\
+FILES			:=./src/algorithms/about_already_sorted.c\
+				./src/algorithms/about_sorting_algorithms.c\
 				./src/algorithms/about_sorting_small.c\
 				./src/list/about_add_content_node.c\
 				./src/list/about_add_node_front.c\
@@ -14,7 +15,6 @@ FILES			:=./src/algorithms/about_sorting_algorithms.c\
 				./src/rules/about_reverse_rotate.c\
 				./src/rules/about_rotate.c\
 				./src/rules/about_swap.c\
-				./src/utils/about_already_sorted.c\
 				./src/utils/about_cpy_matrix_to_list.c\
 				./src/utils/about_error.c\
 				./src/utils/about_free_memory.c\
