@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_sorting_algorithms.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:02:00 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/27 16:25:04 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/28 18:08:28 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	ft_sort(t_var *var)
 	rules = ft_init_get_rules();
 	ft_init_stack_b(var);
 	ft_short_list(var->s_a);
-	ft_add_position_list(var);
-	rules->pb(var->s_a, var->s_b, PA);
-	//get_target_position(var->s_a, var->s_b);
+	get_target_position(var->s_a, var->s_b, var);
 	ft_add_target_pos_list(var);
 
 	printf("lista a\n");

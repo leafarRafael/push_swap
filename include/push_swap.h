@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/27 14:16:31 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/28 13:05:12 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	ft_short_list(t_cdlst *list);
 void	ft_sort(t_var *var);
 void	ft_init_stack_b(t_var *var);
 void    ft_add_target_pos_list(t_var *var);
-void	get_target_position(t_cdlst *a, t_cdlst *b);
+void	get_target_position(t_cdlst *a, t_cdlst *b, t_var *var);
 
 /*
 	functions about rules push_swap

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FUNCOES_TEMPORARIAS_DEBUG.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:43:20 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/27 11:11:54 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/28 14:19:42 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,17 +83,15 @@ void	ft_print_list_all_atribute(t_cdlst *list)
 	{
 		if (list->head->target_pos)
 			printf("target_pos-> [%d]", list->head->target_pos);
-		printf("index->[%d] position->[%d] content->[%ld]\n", list->head->index, list->head->pos, list->head->content);
+		printf("index->[%d] position->[%d]\n", list->head->index, list->head->pos);
 		return ;
 	}
 	temp = list->head;
-	printf("target_pos-> [%d]", temp->target_pos);
-	printf("index->[%d] position->[%d] content->[%ld]\n", temp->index, temp->pos, temp->content);
+	printf("index->[%d] | position->[%d] | target_pos-> [%d] \n", temp->index, temp->pos, temp->target_pos);
 	temp = list->head->next;
 	while (temp != list->head)
 	{
-		printf("target_pos-> [%d]", temp->target_pos);
-		printf("index->[%d] position->[%d] content->[%ld]\n", temp->index, temp->pos, temp->content);
+		printf("index->[%d] | position->[%d] | target_pos-> [%d] \n", temp->index, temp->pos, temp->target_pos);
 		temp = temp->next;
 	}
 }
