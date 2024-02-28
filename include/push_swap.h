@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/25 15:07:02 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/27 14:16:31 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ typedef struct s_node
 	struct s_node   *prev;
 	struct s_node   *next;
 	int				index;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 }           t_node;
 
 typedef struct s_cdlst
@@ -90,9 +94,12 @@ void	ft_assigned_index_node(t_var *var);
 	functions about algorithms
 */
 int		ft_already_sorted(t_cdlst *s_a);
+void    ft_add_position_list(t_var *var);
 void	ft_short_list(t_cdlst *list);
 void	ft_sort(t_var *var);
 void	ft_init_stack_b(t_var *var);
+void    ft_add_target_pos_list(t_var *var);
+void	get_target_position(t_cdlst *a, t_cdlst *b);
 
 /*
 	functions about rules push_swap
@@ -119,5 +126,6 @@ void	ft_include_node(t_cdlst *list, t_node  *new_node);
 void	ft_print_list(t_cdlst *list);
 void	ft_print_list_index(t_cdlst *list);
 void	print_matrix(char **matrix);
+void	ft_print_list_all_atribute(t_cdlst *list);
 
 #endif

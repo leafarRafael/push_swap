@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:02:00 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/26 16:26:04 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/02/27 16:25:04 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,18 @@ void	ft_sort(t_var *var)
 	t_rules	*rules;
 	t_node	*node;
 
+	rules = ft_init_get_rules();
 	ft_init_stack_b(var);
 	ft_short_list(var->s_a);
+	ft_add_position_list(var);
+	rules->pb(var->s_a, var->s_b, PA);
+	//get_target_position(var->s_a, var->s_b);
+	ft_add_target_pos_list(var);
 
-
-	//ft_print_list(var->s_a);
-	ft_print_list_index(var->s_a);
+	printf("lista a\n");
+	ft_print_list_all_atribute(var->s_a);
+	printf("lista b\n");
+	ft_print_list_all_atribute(var->s_b);
 }
 
 void	ft_init_stack_b(t_var *var)
@@ -33,7 +39,7 @@ void	ft_init_stack_b(t_var *var)
 	int		half_size;
 
 	rules = ft_init_get_rules();
-	half_size = var->s_a->size / 4;
+	half_size = var->s_a->size / 2;
 	while (var->s_a->size != 3)
 		ft_init_stack_b_healper(var, &half_size, rules);
 }
