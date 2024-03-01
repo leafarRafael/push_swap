@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/28 13:05:12 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/01 17:53:48 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,21 @@ typedef struct s_var
 {
 	long	bigger;
 	long	smaller;
+	int		half_size;
+	int		larg_i;
+	int		smal_i;
+	int		half_i;
+	int		i_a;
+	int		i_b;
+	int		i;
+	int		t_pos;
+	int		max_index;
+	t_node	*n_a;
+	t_node	*n_b;
+	t_node	*node;
 	t_cdlst	*s_a;
 	t_cdlst	*s_b;
+	t_rules	*rules;
 }			t_var;
 
 /*
@@ -95,11 +108,13 @@ void	ft_assigned_index_node(t_var *var);
 */
 int		ft_already_sorted(t_cdlst *s_a);
 void    ft_add_position_list(t_var *var);
-void	ft_short_list(t_cdlst *list);
+void	ft_short_list(t_cdlst *list, t_var *var);
 void	ft_sort(t_var *var);
 void	ft_init_stack_b(t_var *var);
 void    ft_add_target_pos_list(t_var *var);
-void	get_target_position(t_cdlst *a, t_cdlst *b, t_var *var);
+void	ft_largest_smallest_index_content(t_var *var, t_cdlst *list);
+void	ft_calculate_cost(t_var *var);
+void	ft_find_best_move(t_var *var);
 
 /*
 	functions about rules push_swap

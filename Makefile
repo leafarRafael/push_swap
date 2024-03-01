@@ -5,6 +5,8 @@ LIBFT			:= ./lib/lib_get_print/libft.a
 PATH_MAKE_LIB	:= ./lib/lib_get_print
 
 FILES			:=./src/algorithms/about_already_sorted.c\
+				./src/algorithms/about_cost_to_move.c\
+				./src/algorithms/about_find_move.c\
 				./src/algorithms/about_position.c\
 				./src/algorithms/about_sorting_algorithms.c\
 				./src/algorithms/about_sorting_small.c\

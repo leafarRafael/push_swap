@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:20 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/25 15:06:50 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:12:05 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 		ft_error("error", NULL);
 	var->s_a = ft_init_list();
 	var->s_b = ft_init_list();
+	var->rules = ft_init_get_rules();
 	ft_cpy_matrix_to_list(var, argv);
 	ft_assigned_index_node(var);
 	if (ft_check_repeated_numbers(var->s_a) != 0)

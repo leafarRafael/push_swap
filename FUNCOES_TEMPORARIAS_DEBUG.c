@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:43:20 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/28 14:19:42 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/01 14:55:41 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,15 @@ void	ft_print_list_all_atribute(t_cdlst *list)
 		return ;
 	if (list->size == 1)
 	{
-		if (list->head->target_pos)
-			printf("target_pos-> [%d]", list->head->target_pos);
-		printf("index->[%d] position->[%d]\n", list->head->index, list->head->pos);
+		printf("index->[%d] | position->[%d] | target_pos-> [%d] \n", list->head->index, list->head->pos, list->head->target_pos);
 		return ;
 	}
 	temp = list->head;
-	printf("index->[%d] | position->[%d] | target_pos-> [%d] \n", temp->index, temp->pos, temp->target_pos);
+	printf("index->[%d] | position->[%d] | target_pos-> [%d] cost_a-> [%d] cost_b-> [%d]\n", temp->index, temp->pos, temp->target_pos, temp->cost_a, temp->cost_b);
 	temp = list->head->next;
 	while (temp != list->head)
 	{
-		printf("index->[%d] | position->[%d] | target_pos-> [%d] \n", temp->index, temp->pos, temp->target_pos);
+		printf("index->[%d] | position->[%d] | target_pos-> [%d] cost_a-> [%d] cost_b-> [%d]\n", temp->index, temp->pos, temp->target_pos, temp->cost_a, temp->cost_b);
 		temp = temp->next;
 	}
 }
