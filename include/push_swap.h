@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/01 17:53:48 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/02 16:08:06 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,21 @@ typedef struct s_rules
 	void	(*rrr)(t_cdlst *list_a, t_cdlst *list_b, char *msg);
 }			t_rules;
 
+typedef struct s_set_move
+{
+
+}			t_set_move;
+
 typedef struct s_var
 {
-	long	bigger;
-	long	smaller;
-	int		half_size;
-	int		larg_i;
-	int		smal_i;
-	int		half_i;
+	int		largest;
+	int		smaller;
 	int		i_a;
 	int		i_b;
 	int		i;
-	int		t_pos;
-	int		max_index;
+	t_node	*node;
 	t_node	*n_a;
 	t_node	*n_b;
-	t_node	*node;
 	t_cdlst	*s_a;
 	t_cdlst	*s_b;
 	t_rules	*rules;
@@ -101,20 +100,12 @@ char	**ft_cpy_matrix(char *argv[], int argc);
 t_rules	*ft_init_get_rules(void);
 void    ft_cpy_matrix_to_list(t_var *var, char  *matrix[]);
 int		ft_check_repeated_numbers(t_cdlst *s_a);
-void	ft_search_highest_lowest(t_var *var, t_cdlst *list);
+void	ft_find_largest_smallest_index(t_var *var, t_cdlst *list);
 void	ft_assigned_index_node(t_var *var);
 /*
 	functions about algorithms
 */
-int		ft_already_sorted(t_cdlst *s_a);
-void    ft_add_position_list(t_var *var);
-void	ft_short_list(t_cdlst *list, t_var *var);
-void	ft_sort(t_var *var);
-void	ft_init_stack_b(t_var *var);
-void    ft_add_target_pos_list(t_var *var);
-void	ft_largest_smallest_index_content(t_var *var, t_cdlst *list);
-void	ft_calculate_cost(t_var *var);
-void	ft_find_best_move(t_var *var);
+
 
 /*
 	functions about rules push_swap
@@ -134,6 +125,8 @@ void    ft_rev_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg);
 t_cdlst	*ft_init_list(void);
 void	ft_creating_node(t_cdlst *list, long content);
 void	ft_include_node(t_cdlst *list, t_node  *new_node);
+void	ft_largest_smallest_index_content(t_var *var, t_cdlst *list);
+int		ft_already_sorted(t_cdlst *s_a);
 
 /*
 	FUNÇÕES TEMPORARIAS
