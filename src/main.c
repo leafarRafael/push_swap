@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:20 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/02 17:28:35 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/03 15:29:37 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,6 @@ void	ft_sort(t_var *var)
 		}
 		find = ft_find(var, media);
 	}
-	var->i_a = 0;
-	while (var->i_a != 50)
-	{
-		if (var->s_a->head->index-1 == var->s_b->head->index)
-			var->rules->pb(var->s_b, var->s_a, PB);
-		if (var->s_a->head->index+1 == var->s_b->last->index)
-		{
-			var->rules->pb(var->s_b, var->s_a, PB);
-			var->rules->rb(var->s_b, RB);
-		}
-		var->rules->ra(var->s_a, RA);
-		var->i_a++;
-	}
-
 }
 
 int	ft_find(t_var *var, int index)
