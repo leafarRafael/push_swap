@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   about_highest_lowest_value.c                       :+:      :+:    :+:   */
+/*   about_highest_lowest_index.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:55:44 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/02 12:58:23 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/05 10:50:43 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	ft_find_largest_smallest_index(t_var *var, t_cdlst *list)
 {
-	var->i = 0;
-	var->node = list->head;
+	t_sv	v;
+
+	v.i = 0;
+	v.node = list->head;
 	var->smaller = list->head->index;
 	var->largest = var->smaller;
-	while (var->i != list->size)
+	while (v.i != list->size)
 	{
-		if (var->node->index <= var->smaller)
-			var->smaller = var->node->index;
-		if (var->node->index >= var->largest)
-			var->largest = var->node->index;
-		var->node = var->node->next;
-		var->i++;
+		if (v.node->index <= var->smaller)
+			var->smaller = v.node->index;
+		if (v.node->index >= var->largest)
+			var->largest = v.node->index;
+		v.node = v.node->next;
+		v.i++;
 	}
 }

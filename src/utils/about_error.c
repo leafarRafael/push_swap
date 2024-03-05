@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:52:32 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/25 14:41:05 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/04 17:58:31 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_error(char *msg, t_cdlst *list)
 	exit(EXIT_FAILURE);
 }
 
-void	ft_error_cpy_m_l(char *msg, t_cdlst *stack_a, t_cdlst *stack_b, t_var *var)
+void	ft_finish_program(char *msg, t_cdlst *stack_a, t_cdlst *stack_b, t_var *var)
 {
 	if (msg)
 		ft_printf("%s\n", msg);

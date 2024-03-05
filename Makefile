@@ -4,7 +4,15 @@ CC				:= cc
 LIBFT			:= ./lib/lib_get_print/libft.a
 PATH_MAKE_LIB	:= ./lib/lib_get_print
 
-FILES			:= ./src/about_already_sorted.c \
+FILES			:= ./src/about_already_sorted.c\
+				./src/algorithms/about_sort.c\
+				./src/algorithms/about_sorting_three.c\
+				./src/algorithms/about_stack_b_initialization.c\
+				./src/algorithms/about_position_node.c\
+				./src/algorithms/about_target_position.c\
+				./src/algorithms/about_cost_move.c\
+				./src/algorithms/about_lowest_cost_move.c\
+				./src/algorithms/about_make_move.c\
 				./src/list/about_add_content_node.c\
 				./src/list/about_add_node_front.c\
 				./src/list/about_indexing_the_list.c\
@@ -16,13 +24,11 @@ FILES			:= ./src/about_already_sorted.c \
 				./src/utils/about_cpy_matrix_to_list.c\
 				./src/utils/about_error.c\
 				./src/utils/about_free_memory.c\
-				./src/utils/about_highest_lowest_value.c\
+				./src/utils/about_highest_lowest_index.c\
 				./src/utils/about_repeated_numbers.c\
 				./src/utils/about_struct_rules.c\
 				./src/utils/about_valid_args.c\
 				./src/main.c\
-				FUNCOES_TEMPORARIAS_DEBUG.c
-
 
 INCLUDE			:= -I ./include -I ./lib/lib_get_print/includes
 CMD_CLEAN		:= rm -Rf

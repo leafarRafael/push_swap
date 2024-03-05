@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/02 16:08:06 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/05 13:58:19 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,32 +68,35 @@ typedef struct s_rules
 	void	(*rrr)(t_cdlst *list_a, t_cdlst *list_b, char *msg);
 }			t_rules;
 
-typedef struct s_set_move
-{
-
-}			t_set_move;
-
 typedef struct s_var
 {
 	int		largest;
 	int		smaller;
-	int		i_a;
-	int		i_b;
-	int		i;
-	t_node	*node;
-	t_node	*n_a;
-	t_node	*n_b;
 	t_cdlst	*s_a;
 	t_cdlst	*s_b;
 	t_rules	*rules;
 }			t_var;
+
+typedef struct s_support_variables
+{
+	int		i;
+	int		x;
+	int		c_b;
+	int		c_a;
+	int		index;
+	int		size;
+	int		target_pos;
+	t_node	*node_a;
+	t_node	*node_b;
+	t_node	*node;
+}			t_sv;
 
 /*
 	functions utils
 */
 void	ft_valid_arg(int argc, char *argv[]);
 void	ft_error(char *msg, t_cdlst *list);
-void	ft_error_cpy_m_l(char *msg, t_cdlst *stack_a, t_cdlst *stack_b, t_var *var);
+void	ft_finish_program(char *msg, t_cdlst *stack_a, t_cdlst *stack_b, t_var *var);
 void	ft_free_matrix(char **matrix);
 void	ft_free_list(t_cdlst *list);
 char	**ft_cpy_matrix(char *argv[], int argc);
@@ -106,6 +109,14 @@ void	ft_assigned_index_node(t_var *var);
 	functions about algorithms
 */
 
+void	ft_sort(t_var *var);
+void	ft_sort_three(t_var *var);
+void    ft_stack_b_init(t_var *var);
+void    ft_add_position_node(t_cdlst *s_a, t_cdlst *s_b);
+void    ft_find_target_position(t_cdlst *s_a, t_cdlst *s_b);
+void    ft_calculate_cost_move(t_cdlst *s_a, t_cdlst *s_b);
+void    ft_find_lowest_cost_and_move(t_var *var, t_cdlst *s_a, t_cdlst *s_b);
+void    ft_make_move(t_var *var, int c_a, int c_b);
 
 /*
 	functions about rules push_swap
@@ -121,19 +132,10 @@ void    ft_rev_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg);
 /*
 	functions about list creation
 */
-
 t_cdlst	*ft_init_list(void);
 void	ft_creating_node(t_cdlst *list, long content);
 void	ft_include_node(t_cdlst *list, t_node  *new_node);
 void	ft_largest_smallest_index_content(t_var *var, t_cdlst *list);
 int		ft_already_sorted(t_cdlst *s_a);
-
-/*
-	FUNÇÕES TEMPORARIAS
-*/
-void	ft_print_list(t_cdlst *list);
-void	ft_print_list_index(t_cdlst *list);
-void	print_matrix(char **matrix);
-void	ft_print_list_all_atribute(t_cdlst *list);
 
 #endif

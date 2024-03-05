@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_indexing_the_list.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 13:05:12 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/02 12:55:10 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/04 09:50:18 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 void	ft_assigned_index_node(t_var *var)
 {
-	int	index;
+	t_sv	v;
 
-	var->n_a = var->s_a->head;
-	var->node = var->s_a->head;
-	var->i = 0;
-	var->i_a = 0;
-	while (var->i_a != var->s_a->size)
+	v.node_a = var->s_a->head;
+	v.node = var->s_a->head;
+	v.i = 0;
+	v.x = 0;
+	while (v.i != var->s_a->size)
 	{
-		var->i = 0;
-		index = 1;
-		while (var->i != var->s_a->size)
+		v.x = 0;
+		v.index = 1;
+		while (v.x != var->s_a->size)
 		{
-			if (var->n_a->content > var->node->content)
-				index++;
-			var->node = var->node->next;
-			var->i++;
+			if (v.node_a->content > v.node->content)
+				v.index++;
+			v.node = v.node->next;
+			v.x++;
 		}
-		var->n_a->index = index;
-		var->i_a++;
-		var->n_a = var->n_a->next;
+		v.node_a->index = v.index;
+		v.i++;
+		v.node_a = v.node_a->next;
 	}
 }

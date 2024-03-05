@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   about_cpy_matrix_to_list.c                         :+:      :+:    :+:   */
+/*   about_stack_b_initialization.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:56:12 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/04 09:51:54 by rbutzke          ###   ########.fr       */
+/*   Created: 2024/03/05 07:50:18 by rbutzke           #+#    #+#             */
+/*   Updated: 2024/03/05 13:55:20 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_cpy_matrix_to_list(t_var *var, char  *matrix[])
+void    ft_stack_b_init(t_var *var)
 {
-    int     i;
+    t_sv    v;
 
-    i = 1;
-    while (matrix[i])
+    if(var->s_a->size < 300)
+        v.size = var->s_a->size /2;
+    if(var->s_a->size >= 300)
+        v.size = var->s_a->size /10;
+    while (var->s_a->size != 3)
     {
-        ft_creating_node(var->s_a, ft_atol(matrix[i]));
-        i++;
+        if (var->s_a->head->index < v.size)
+        {
+            var->rules->pb(var->s_b, var->s_a, PB);
+            v.size++;
+        }
+        else
+            var->rules->ra(var->s_a, RA);
     }
+    ft_sort_three(var);
 }

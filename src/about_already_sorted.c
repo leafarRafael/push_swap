@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_already_sorted.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:12:37 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/25 12:45:48 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:07:45 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 int	ft_already_sorted(t_cdlst *s_a)
 {
-	t_node	*current;
-	t_node	*next;
-	int		i;
+	t_sv v;
 
+	v.node_a = s_a->head;
+	v.node = s_a->head->next;
+	v.i = 0;
 	if (!s_a)
 		return (-1);
-	i = 0;
-	current = s_a->head;
-	next = s_a->head->next;
-	while (i != s_a->size)
+	while (v.i != s_a->size)
 	{
-		if (current->content > next->content)
+		if (v.node_a->content > v.node->content)
 			return (-1);
-		current = next;
-		next = next->next;
-		if (next == s_a->head)
+		v.node_a = v.node;
+		v.node = v.node->next;
+		if (v.node == s_a->head)
 			return (0);
-		i++;
+		v.i++;
 	}
 	return (0);
 }
