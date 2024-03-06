@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   about_add_node_front.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:35:50 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/23 09:39:15 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:25:50 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_add_1st_node(t_cdlst *list, t_node *new_node);
-static void ft_add_2st_node(t_cdlst *list, t_node *new_node);
+static void	ft_add_1st_node(t_cdlst *list, t_node *new_node);
+static void	ft_add_2st_node(t_cdlst *list, t_node *new_node);
 static void	ft_add_onwards(t_cdlst *list, t_node *new_node);
 
-void	ft_include_node(t_cdlst *list, t_node  *new_node)
+void	ft_include_node(t_cdlst *list, t_node *new_node)
 {
 	if (!new_node || !list)
 		ft_error("error\n", list);
@@ -29,7 +29,7 @@ void	ft_include_node(t_cdlst *list, t_node  *new_node)
 	list->size++;
 }
 
-static void ft_add_1st_node(t_cdlst *list, t_node *new_node)
+static void	ft_add_1st_node(t_cdlst *list, t_node *new_node)
 {
 	new_node->next = new_node;
 	new_node->prev = new_node;
@@ -37,7 +37,7 @@ static void ft_add_1st_node(t_cdlst *list, t_node *new_node)
 	list->last = new_node;
 }
 
-static void ft_add_2st_node(t_cdlst *list, t_node *new_node)
+static void	ft_add_2st_node(t_cdlst *list, t_node *new_node)
 {
 	t_node	*temp;
 

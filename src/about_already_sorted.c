@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:12:37 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/04 10:07:45 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:15:25 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_already_sorted(t_cdlst *s_a)
 {
-	t_sv v;
+	t_sv	v;
 
 	v.node_a = s_a->head;
 	v.node = s_a->head->next;

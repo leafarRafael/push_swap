@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 09:14:23 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/22 09:57:24 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:14:51 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_rotate(t_cdlst *list, char *msg)
 		ft_printf("%s\n", msg);
 }
 
-void    ft_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg)
+void	ft_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg)
 {
 	if (!list_a || list_a->head == list_a->head->next)
 		return ;
@@ -33,5 +33,5 @@ void    ft_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg)
 		return ;
 	ft_rotate(list_a, NULL);
 	ft_rotate(list_b, NULL);
-	ft_printf("%s\n", msg);	
+	ft_printf("%s\n", msg);
 }

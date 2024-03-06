@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_initializing_list.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 10:05:05 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/23 14:02:51 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:08:18 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

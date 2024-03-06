@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_reverse_rotate.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 11:41:51 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/02/24 08:57:02 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:11:10 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_reverse_rotate(t_cdlst *list, char *msg)
 		ft_printf("%s\n", msg);
 }
 
-void    ft_rev_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg)
+void	ft_rev_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg)
 {
 	if (!list_a || list_a->head == list_a->head->next)
 		return ;
@@ -33,5 +33,5 @@ void    ft_rev_rotate_stacks(t_cdlst *list_a, t_cdlst *list_b, char *msg)
 		return ;
 	ft_reverse_rotate(list_a, NULL);
 	ft_reverse_rotate(list_b, NULL);
-	ft_printf("%s\n", msg);	
+	ft_printf("%s\n", msg);
 }

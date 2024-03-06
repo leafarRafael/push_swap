@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:00:12 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/04 10:04:51 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:17:59 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_repeated_numbers(t_cdlst *s_a)
 {
-	t_sv v;
+	t_sv	v;
 
 	if (!s_a)
 		return (-1);

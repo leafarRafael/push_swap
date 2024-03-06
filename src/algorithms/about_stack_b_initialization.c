@@ -6,29 +6,29 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 07:50:18 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/05 13:55:20 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:35:49 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_stack_b_init(t_var *var)
+void	ft_stack_b_init(t_var *var)
 {
-    t_sv    v;
+	t_sv	v;
 
-    if(var->s_a->size < 300)
-        v.size = var->s_a->size /2;
-    if(var->s_a->size >= 300)
-        v.size = var->s_a->size /10;
-    while (var->s_a->size != 3)
-    {
-        if (var->s_a->head->index < v.size)
-        {
-            var->rules->pb(var->s_b, var->s_a, PB);
-            v.size++;
-        }
-        else
-            var->rules->ra(var->s_a, RA);
-    }
-    ft_sort_three(var);
+	if (var->s_a->size < 300)
+		v.size = var->s_a->size / 2;
+	if (var->s_a->size >= 300)
+		v.size = var->s_a->size / 10;
+	while (var->s_a->size != 3)
+	{
+		if (var->s_a->head->index < v.size)
+		{
+			var->rules->pb(var->s_b, var->s_a, PB);
+			v.size++;
+		}
+		else
+			var->rules->ra(var->s_a, RA);
+	}
+	ft_sort_three(var);
 }

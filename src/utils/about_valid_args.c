@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   about_valid_args.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:32:39 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/01 16:57:14 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/06 15:22:11 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static void	ft_valid_args_heper(int argc, char *argv[]);
-static int ft_validating_nbr(char c);
-static int ft_validating_signs(char c);
+static int	ft_validating_nbr(char c);
+static int	ft_validating_signs(char c);
 
 void	ft_valid_arg(int argc, char *argv[])
 {
@@ -27,7 +27,8 @@ void	ft_valid_arg(int argc, char *argv[])
 		{
 			while (argv[1][n] != '\0')
 			{
-				if (!ft_validating_nbr(argv[1][n]) && !ft_validating_signs(argv[1][n]))
+				if (!ft_validating_nbr(argv[1][n])
+					&& !ft_validating_signs(argv[1][n]))
 					ft_error("error", NULL);
 				n++;
 			}
@@ -48,9 +49,11 @@ static void	ft_valid_args_heper(int argc, char *argv[])
 		x = 0;
 		while (argv[i][x])
 		{
-			if (!ft_validating_nbr(argv[i][x]) && !ft_validating_signs(argv[i][x]))
+			if (!ft_validating_nbr(argv[i][x])
+				&& !ft_validating_signs(argv[i][x]))
 				ft_error("error", NULL);
-			if (ft_validating_signs(argv[i][x]) && !ft_validating_nbr(argv[i][x+1]))
+			if (ft_validating_signs(argv[i][x])
+				&& !ft_validating_nbr(argv[i][x +1]))
 				ft_error("error", NULL);
 			x++;
 		}
@@ -60,12 +63,12 @@ static void	ft_valid_args_heper(int argc, char *argv[])
 	}
 }
 
-static int ft_validating_nbr(char c)
+static int	ft_validating_nbr(char c)
 {
-    return ((c >= '0' && c <= '9'));
+	return (c >= '0' && c <= '9');
 }
 
-static int ft_validating_signs(char c)
+static int	ft_validating_signs(char c)
 {
 	return (c == '+' || c == '-');
 }
