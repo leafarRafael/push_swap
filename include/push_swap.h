@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:42:27 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/06 14:50:48 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/15 15:22:20 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # include "ft_printf.h"
 # include "get_next_line.h"
 # include "libft.h"
+
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
-
 # define PA "pa"
 # define PB "pb"
 # define SA "sa"
@@ -29,6 +29,7 @@
 # define RRA "rra"
 # define RRB "rrb"
 # define RRR "rrr"
+# define MSG_ERROR "Error"
 
 typedef struct s_node
 {

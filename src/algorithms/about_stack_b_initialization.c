@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_stack_b_initialization.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 07:50:18 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/06 15:35:49 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/13 15:40:34 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	ft_stack_b_init(t_var *var)
 {
 	t_sv	v;
 
+	if (var->s_a->size == 5)
+	{
+		var->rules->pb(var->s_b, var->s_a, PB);
+		var->rules->pb(var->s_b, var->s_a, PB);
+	}
 	if (var->s_a->size < 300)
 		v.size = var->s_a->size / 2;
 	if (var->s_a->size >= 300)

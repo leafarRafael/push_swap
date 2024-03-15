@@ -1,5 +1,5 @@
 NAME			:= push_swap
-CFLAGS			:= -Wextra -Wall -Werror -g3
+CFLAGS			:= -Wextra -Wall -Werror
 CC				:= cc
 LIBFT			:= ./lib/lib_get_print/libft.a
 PATH_MAKE_LIB	:= ./lib/lib_get_print
@@ -39,7 +39,7 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(FILES)
 
 $(NAME):
-	@$(CC) $(FILES) $(LIBFT) $(INCLUDE) -o $(NAME)
+	@$(CC) $(CFLAGS) $(FILES) $(LIBFT) $(INCLUDE) -o $(NAME)
 
 $(LIBFT): libft
 

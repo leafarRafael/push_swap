@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:10:49 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/06 15:12:54 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/15 13:46:17 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static void	ft_simple_swap(t_cdlst *list);
 
 void	ft_swap(t_cdlst *list, char *msg)
 {
-	t_node	*first;
-
 	if (!list)
 		return ;
 	if (list->size <= 1)

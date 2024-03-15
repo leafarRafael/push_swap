@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:36:16 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/06 15:13:27 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/15 15:22:10 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_push(t_cdlst *to_stack, t_cdlst *from_stack, char *msg)
 	t_node	*second;
 
 	if (!to_stack || !from_stack)
-		ft_error("error\n", NULL);
+		ft_error(MSG_ERROR, NULL);
 	if (from_stack->size == 0)
 		return ;
 	remove_add = from_stack->head;

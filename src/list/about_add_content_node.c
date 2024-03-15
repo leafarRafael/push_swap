@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_add_content_node.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:28:08 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/06 15:26:08 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/15 15:22:10 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_creating_node(t_cdlst *list, long content)
 
 	new_node = malloc(sizeof(t_node));
 	if (!new_node || !list)
-		ft_error("error\n", list);
+		ft_error(MSG_ERROR, list);
 	new_node->content = content;
 	if (list->size == 0)
 		ft_add_1st_node(list, new_node);

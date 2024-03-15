@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_make_move.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 10:23:25 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/06 15:01:15 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/08 08:43:44 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	ft_revert_rotate(t_var *var, int *c_a, int *c_b)
 	{
 		(*c_a)++;
 		(*c_b)++;
-		var->rules->rrr(var->s_a, var->s_b, RRR); 
+		var->rules->rrr(var->s_a, var->s_b, RRR);
 	}
 }
 
@@ -44,7 +44,7 @@ static void	ft_rrotate(t_var *var, int *c_a, int *c_b)
 	{
 		(*c_a)--;
 		(*c_b)--;
-		var->rules->rr(var->s_a, var->s_b, RR); 
+		var->rules->rr(var->s_a, var->s_b, RR);
 	}
 }
 

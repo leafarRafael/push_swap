@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   about_add_node_front.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:35:50 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/03/06 15:25:50 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/03/15 15:22:10 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_add_onwards(t_cdlst *list, t_node *new_node);
 void	ft_include_node(t_cdlst *list, t_node *new_node)
 {
 	if (!new_node || !list)
-		ft_error("error\n", list);
+		ft_error(MSG_ERROR, list);
 	if (list->size == 0)
 		ft_add_1st_node(list, new_node);
 	else if (list->size == 1)
