@@ -31,8 +31,7 @@ FILES			:= ./src/about_already_sorted.c\
 				./src/main.c\
 
 INCLUDE			:= -I ./include -I ./lib/lib_get_print/includes
-CMD_CLEAN		:= rm -Rf
-CMD_FCLEAN		:= rm -rf
+CMD_CLEAN		:= rm -rf
 
 all: $(NAME)
 
@@ -47,6 +46,9 @@ libft:
 	@$(MAKE) -C $(PATH_MAKE_LIB) --no-print-directory
 
 libft_clean:
+	@$(MAKE) -C $(PATH_MAKE_LIB) clean --no-print-directory
+
+libft_fclean:
 	@$(MAKE) -C $(PATH_MAKE_LIB) fclean --no-print-directory
 
 libft_re:
@@ -55,7 +57,7 @@ libft_re:
 clean:
 	@$(CMD_CLEAN) $(NAME)
 
-fclean: clean libft_clean
+fclean: clean libft_fclean
 	@$(CMD_CLEAN) $(NAME)
 
-re: clean, fclean, libft_re, pipex_re, $(LIBFT)
+re: fclean libft_fclean all
