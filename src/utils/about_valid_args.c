@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:32:39 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/05/03 14:01:11 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/05/03 14:18:09 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static int	ft_valid_is_sing(char *argv[])
 		x = 0;
 		while (argv[i][x] != '\0')
 		{
-			if (ft_valid_signs(argv[i][x]) && !ft_valid_nbr(argv[i][x+1]))
+			if (ft_valid_signs(argv[i][x]) && !ft_valid_nbr(argv[i][x +1]))
 				error++;
 			x++;
 		}
